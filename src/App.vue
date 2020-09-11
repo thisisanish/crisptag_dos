@@ -1,17 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <input type="text" v-on:change="UpperCase" />
+
+  <h2>{{msg}}</h2>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: {},
+  data() {
+    return {
+      msg: "Enter Value and Press Enter",
+    };
+  },
+  methods: {
+    UpperCase(e) {
+      this.msg = e.target.value.toUpperCase();
+    },
+  },
+};
 </script>
 
 <style>
